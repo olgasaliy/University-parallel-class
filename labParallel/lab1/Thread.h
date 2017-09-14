@@ -21,8 +21,10 @@
 
 @property (nonatomic, weak) id <ThreadDelegate> delegate;
 
--(id)initWithVectorA:(Vector *)vectorA
+- (id)initWithVectorA:(Vector *)vectorA
              vectorB:(Vector *)vectorB
           startingAt:(NSInteger)startIndex
                endAt:(NSInteger)endIndex;
+- (NSUInteger)getResult;
+
 @end

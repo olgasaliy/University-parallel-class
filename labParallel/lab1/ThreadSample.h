@@ -14,4 +14,6 @@
 
 @interface ThreadSample : NSObject <ThreadDelegate>
 
+- (void)doWork;
+
 @end

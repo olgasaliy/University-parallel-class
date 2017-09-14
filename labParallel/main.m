@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Thread.h"
+#import "ThreadSample.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        ThreadSample *sample = [[ThreadSample alloc] init];
+        [sample doWork];
     }
     return 0;
 }

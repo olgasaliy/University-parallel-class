@@ -12,6 +12,8 @@
 @interface ThreadSample ()
 
 @property NSUInteger parallelResult;
+@property (nonatomic) NSMutableDictionary *threadsFinished;
+@property NSMutableSet *threads;
 
 @end
 
@@ -23,27 +25,37 @@
     
     NSUInteger serialResult = [v1 multiplyWithVector:v2];
     
-    NSLog(@"Fisrt result: %lu", serialResult);
+    NSLog(@"First result: %lu", serialResult);
     
-    NSMutableSet *threads = [[NSMutableSet alloc] init];
+    self.threadsFinished = [[NSMutableDictionary alloc] init];
+    self.threads = [[NSMutableSet alloc] init];
     for (NSInteger i = 0; i < NUMBER_THREADS; i++) {
         Thread *thread = [[Thread alloc] initWithVectorA:v1
                                                  vectorB:v2
                                               startingAt:VECTOR_SIZE/NUMBER_THREADS * i
                                                    endAt:i == NUMBER_THREADS-1 ? VECTOR_SIZE : VECTOR_SIZE/NUMBER_THREADS * (i + 1)];
-        [threads addObject:thread];
+        thread.delegate = self;
+        [self.threads addObject:thread];
+        [self.threadsFinished setValue:@"false" forKey:thread.description];
         [thread start];
     }
     
-    for (Thread *t in threads) {
+}
 
+- (void)joinAllThreads {
+    for (Thread *t in self.threads) {
+        self.parallelResult += [t getResult];
     }
+    NSLog(@"Second result: %lu", self.parallelResult);
     
     
 }
 
--(void)didFinishThread:(Thread *)thread {
-    
+- (void)didFinishThread:(Thread *)thread {
+    [self.threadsFinished setValue:@"true" forKey:thread.description];
+    if (![self.threadsFinished.allKeys containsObject:@"false"]) {
+        [self joinAllThreads];
+    }
 }
 
 @end

@@ -42,13 +42,21 @@
     }
 }
 
+- (NSUInteger)getResult {
+    return self.result;
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(id)object
                         change:(NSDictionary<NSKeyValueChangeKey,id> *)change
                        context:(void *)context {
-    if ([keyPath isEqualToString:@"isFinished"]) {
-        //delegate
+    if ([keyPath isEqualToString:@"isFinished"] && self.isFinished) {
+        [self.delegate didFinishThread:self];
     }
+}
+
+-(void)dealloc {
+    [self removeObserver:self forKeyPath:@"isFinished"];
 }
 
 @end
