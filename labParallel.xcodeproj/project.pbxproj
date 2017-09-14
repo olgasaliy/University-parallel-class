@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		49FB18921F6ADA7800AC5C16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FB18911F6ADA7800AC5C16 /* main.m */; };
+		49FB18A81F6ADB4F00AC5C16 /* Thread.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FB18A31F6ADB4F00AC5C16 /* Thread.m */; };
+		49FB18A91F6ADB4F00AC5C16 /* ThreadSample.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FB18A51F6ADB4F00AC5C16 /* ThreadSample.m */; };
+		49FB18AA1F6ADB4F00AC5C16 /* Vector.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FB18A71F6ADB4F00AC5C16 /* Vector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		49FB188E1F6ADA7800AC5C16 /* labParallel */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = labParallel; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FB18911F6ADA7800AC5C16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49FB18A21F6ADB4F00AC5C16 /* Thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Thread.h; sourceTree = "<group>"; };
+		49FB18A31F6ADB4F00AC5C16 /* Thread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Thread.m; sourceTree = "<group>"; };
+		49FB18A41F6ADB4F00AC5C16 /* ThreadSample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSample.h; sourceTree = "<group>"; };
+		49FB18A51F6ADB4F00AC5C16 /* ThreadSample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadSample.m; sourceTree = "<group>"; };
+		49FB18A61F6ADB4F00AC5C16 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		49FB18A71F6ADB4F00AC5C16 /* Vector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +66,23 @@
 		49FB18901F6ADA7800AC5C16 /* labParallel */ = {
 			isa = PBXGroup;
 			children = (
+				49FB18A11F6ADB4F00AC5C16 /* lab1 */,
 				49FB18911F6ADA7800AC5C16 /* main.m */,
 			);
 			path = labParallel;
+			sourceTree = "<group>";
+		};
+		49FB18A11F6ADB4F00AC5C16 /* lab1 */ = {
+			isa = PBXGroup;
+			children = (
+				49FB18A21F6ADB4F00AC5C16 /* Thread.h */,
+				49FB18A31F6ADB4F00AC5C16 /* Thread.m */,
+				49FB18A41F6ADB4F00AC5C16 /* ThreadSample.h */,
+				49FB18A51F6ADB4F00AC5C16 /* ThreadSample.m */,
+				49FB18A61F6ADB4F00AC5C16 /* Vector.h */,
+				49FB18A71F6ADB4F00AC5C16 /* Vector.m */,
+			);
+			path = lab1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FB18921F6ADA7800AC5C16 /* main.m in Sources */,
+				49FB18A91F6ADB4F00AC5C16 /* ThreadSample.m in Sources */,
+				49FB18AA1F6ADB4F00AC5C16 /* Vector.m in Sources */,
+				49FB18A81F6ADB4F00AC5C16 /* Thread.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
